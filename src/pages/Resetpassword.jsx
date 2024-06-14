@@ -22,7 +22,7 @@ const ResetPassword = () => {
       if (data.success) {
         toast.success("success");
         navigate("/login");
-      }else{
+      } else {
         throw error("Invalid");
       }
     } catch (error) {

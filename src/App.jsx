@@ -15,11 +15,11 @@ import ForgotPage from "./pages/ForgotPage";
 import UserContext from "./Context/UserContext";
 import axios from "axios";
 import MyAccountPage from "./pages/MyAccountPage";
-import ResetPassword from "./pages/Resetpassword";
 import ContinueCourse from "./pages/ContinueCourse";
 import TermsAndConditions from "./pages/TermsAndCondition";
 import RefundPolicy from "./pages/RefundPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ResetPassword from "./pages/Resetpassword";
 
 function App() {
   const [loginobj, setloginobj] = useState({ status: false, data: null });
