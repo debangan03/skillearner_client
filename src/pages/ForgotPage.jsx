@@ -15,7 +15,7 @@ const ForgotPage = () => {
     // Handle form submission
     //setMessage('If this email is registered, you will receive a password reset link.');
 
-    let {data:{resetLink}}=await axios.post('http://localhost:4500/forgotpassword',{
+    let {data:{resetLink}}=await axios.post('https://skillearner-server-1.onrender.com/forgotpassword',{
       email: email,
     })
     if(resetLink){

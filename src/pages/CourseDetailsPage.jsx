@@ -10,7 +10,7 @@ const CourseDetailsPage = () => {
 
   let { courseid } = useParams();
   const fetchcoursebyid = async () => {
-    const data = await axios.post(`http://localhost:4500/getcoursebyid`, {
+    const data = await axios.post(`https://skillearner-server-1.onrender.com/getcoursebyid`, {
       id: courseid,
     });
 
@@ -21,7 +21,7 @@ const CourseDetailsPage = () => {
   };
 
   const chkcoursepurchasebyuser = async (cid) => {
-    let data = await axios.post(`http://localhost:4500/veryfypurchasebyuser`, {
+    let data = await axios.post(`https://skillearner-server-1.onrender.com/veryfypurchasebyuser`, {
       id: session?.data?.id,
       cid: cid,
     });

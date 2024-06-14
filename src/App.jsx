@@ -25,7 +25,7 @@ function App() {
   const [loginobj, setloginobj] = useState({ status: false, data: null });
 
   const validatetoken = async (token) => {
-    let data1 = await axios.post("http://localhost:4500/validatesession", {
+    let data1 = await axios.post("https://skillearner-server-1.onrender.com/validatesession", {
       token: token,
     });
     if (data1.data.status) {

@@ -23,7 +23,7 @@ const LoginPage = () => {
     password: "",
   };
   const handlesubmit_for_signin = async (values) => {
-    let resdata = await axios.post("http://localhost:4500/login", values);
+    let resdata = await axios.post("https://skillearner-server-1.onrender.com/login", values);
     let data = resdata.data;
     //console.log(data);
     if (data.success) {

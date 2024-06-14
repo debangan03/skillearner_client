@@ -11,7 +11,7 @@ const CheckoutPage = () => {
   let session = useContext(UserContext);
   const navigate = useNavigate();
   const fetchcoursebyid = async () => {
-    const res = await axios.post(`http://localhost:4500/getcoursebyid`, {
+    const res = await axios.post(`https://skillearner-server-1.onrender.com/getcoursebyid`, {
       id: id,
     });
     //console.log(res.data);
@@ -34,7 +34,7 @@ const CheckoutPage = () => {
     }
   }, [session]);
   const chkcoursepurchasebyuser = async (cid) => {
-    let data = await axios.post(`http://localhost:4500/veryfypurchasebyuser`, {
+    let data = await axios.post(`https://skillearner-server-1.onrender.com/veryfypurchasebyuser`, {
       id: session?.data?.id,
       cid: cid,
     });
@@ -59,7 +59,7 @@ const CheckoutPage = () => {
   };
   const initiatePayment = async () => {
     console.log();
-    const { data } = await axios.post("http://localhost:4500/prepayment", {
+    const { data } = await axios.post("https://skillearner-server-1.onrender.com/prepayment", {
       amount: courseDetails?.price,
       email: session?.data?.email,
       name: session?.data?.name,
@@ -80,7 +80,7 @@ const CheckoutPage = () => {
         // Verify the payment on the server
         const {
           data: { success },
-        } = await axios.post("http://localhost:4500/postpayment", {
+        } = await axios.post("https://skillearner-server-1.onrender.com/postpayment", {
           order_id: data.data.id,
           payment_id: response.razorpay_payment_id,
           signature: response.razorpay_signature,

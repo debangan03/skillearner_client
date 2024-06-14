@@ -29,7 +29,7 @@ function RegistrationPage() {
   const handleOtpSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:4500/signup", { email, otp, name, password, phone });
+      const res = await axios.post("https://skillearner-server-1.onrender.com/signup", { email, otp, name, password, phone });
       if (res.data.success) {
         toast.success("Registration successful");
         navigate("/login");
@@ -55,7 +55,7 @@ function RegistrationPage() {
       setPassword(values.password);
       setPhone(values.phone);
       try {
-        const res = await axios.post("http://localhost:4500/sendotp", { email: values.email,name:values.name });
+        const res = await axios.post("https://skillearner-server-1.onrender.com/sendotp", { email: values.email,name:values.name });
         if (res.data.success) {
           setOtpSent(true);
           toast.success("OTP sent to email");

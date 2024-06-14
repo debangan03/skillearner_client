@@ -4,7 +4,7 @@ import axios from "axios";
 
 const CoursesPage = () => {
   const fetchCourses = async () => {
-    let courses = await axios.get("http://localhost:4500/getallcourses");
+    let courses = await axios.get("https://skillearner-server-1.onrender.com/getallcourses");
     if (courses.status) {
       setcourses(courses.data.data);
     }

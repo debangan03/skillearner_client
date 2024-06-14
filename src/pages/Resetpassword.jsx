@@ -22,7 +22,7 @@ const ResetPassword = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:4500/resetpassword', {
+      const response = await axios.post('https://skillearner-server-1.onrender.com/resetpassword', {
         token,
         newPassword,
       });

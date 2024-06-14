@@ -11,7 +11,7 @@ const MyAccountPage = () => {
   const [userinfo, setuserinfo] = useState();
   const fetchuserdata = async () => {
     let id = session?.data?.id;
-    let data1 = await axios.post("http://localhost:4500/getuserbyid", {
+    let data1 = await axios.post("https://skillearner-server-1.onrender.com/getuserbyid", {
       id: id,
     });
     if (data1.data.status) {
