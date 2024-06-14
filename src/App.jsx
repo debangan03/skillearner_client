@@ -19,15 +19,18 @@ import ContinueCourse from "./pages/ContinueCourse";
 import TermsAndConditions from "./pages/TermsAndCondition";
 import RefundPolicy from "./pages/RefundPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import ResetPassword from "./pages/ResetPassword";
+import ResetPasswordPage from "./pages/ResetPasswordPage";
 
 function App() {
   const [loginobj, setloginobj] = useState({ status: false, data: null });
 
   const validatetoken = async (token) => {
-    let data1 = await axios.post("https://skillearner-server-1.onrender.com/validatesession", {
-      token: token,
-    });
+    let data1 = await axios.post(
+      "https://skillearner-server-1.onrender.com/validatesession",
+      {
+        token: token,
+      }
+    );
     if (data1.data.status) {
       setloginobj({ status: true, data: data1.data.data });
     }
@@ -63,7 +66,7 @@ function App() {
           <Route path="/checkout/:id" element={<CheckoutPage />} />
           <Route path="/forgotpassword" element={<ForgotPage />} />
           <Route path="/myaccount" element={<MyAccountPage />} />
-          <Route path="/resetpassword/:token" element={<ResetPassword />} />
+          <Route path="/resetpassword/:token" element={<ResetPasswordPage />} />
           <Route
             path="/continuecourse/:courseId"
             element={<ContinueCourse />}

@@ -1,9 +1,10 @@
+import React from "react";
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast, Toaster } from "react-hot-toast";
 
-const ResetPassword = () => {
+function ResetPasswordPage() {
   const { token } = useParams();
   const navigate = useNavigate();
   const [newPassword, setNewPassword] = useState("");
@@ -62,6 +63,6 @@ const ResetPassword = () => {
       </div>
     </div>
   );
-};
+}
 
-export default ResetPassword;
+export default ResetPasswordPage;
