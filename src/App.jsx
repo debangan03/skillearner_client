@@ -63,7 +63,7 @@ function App() {
           <Route path="/checkout/:id" element={<CheckoutPage />} />
           <Route path="/forgotpassword" element={<ForgotPage />} />
           <Route path="/myaccount" element={<MyAccountPage />} />
-          <Route path="/reserpassword/:token" element={<ResetPassword />} />
+          <Route path="/resetpassword/:token" element={<ResetPassword />} />
           <Route
             path="/continuecourse/:courseId"
             element={<ContinueCourse />}
